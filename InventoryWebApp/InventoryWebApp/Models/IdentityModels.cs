@@ -29,5 +29,7 @@ namespace InventoryWebApp.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<InventoryWebApp.Models.Product> Products { get; set; }
     }
 }
