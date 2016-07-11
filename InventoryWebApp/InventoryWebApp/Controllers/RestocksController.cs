@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using InventoryWebApp.Models;
+using Microsoft.AspNet.Identity;
 
 namespace InventoryWebApp.Controllers
 {
@@ -17,7 +18,9 @@ namespace InventoryWebApp.Controllers
         // GET: Restocks
         public ActionResult Index()
         {
-            return View(db.Restocks.ToList());
+            string currentUserId = User.Identity.GetUserId().ToString();
+            var restocks = db.Restocks.Where(r => r.UserId == currentUserId);
+            return View(restocks);
         }
 
         // GET: Restocks/Details/5
@@ -50,6 +53,9 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                string currentUserId = User.Identity.GetUserId().ToString();
+                restock.UserId = currentUserId;
+                restock.ProductId = 0;
                 db.Restocks.Add(restock);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,6 +88,8 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                TempData["UserId"] = restock.UserId;
+                TempData["ProductId"] = restock.ProductId;
                 db.Entry(restock).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -101,6 +109,8 @@ namespace InventoryWebApp.Controllers
             {
                 return HttpNotFound();
             }
+            restock.ProductId =(int) TempData["ProductId"];
+            restock.UserId = TempData["UserId"].ToString();
             return View(restock);
         }
 
