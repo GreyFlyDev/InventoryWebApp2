@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace InventoryWebApp.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -53,6 +54,12 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                string currentUserId = User.Identity.GetUserId().ToString();
+                product.UserId = currentUserId;
+                product.Quantity = 0;
+                product.PurchasePricePerUnit = 0;
+                product.NumberOfSales = 0;
+
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -73,6 +80,11 @@ namespace InventoryWebApp.Controllers
             {
                 return HttpNotFound();
             }
+
+            TempData["UserId"] = product.UserId;
+            TempData["ProductQuantity"] = product.Quantity;
+            TempData["PurchasePricePerUnit"] = product.PurchasePricePerUnit;
+            TempData["NumberOfSales"] = product.NumberOfSales;
             return View(product);
         }
 
@@ -85,6 +97,11 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.UserId = TempData["UserId"].ToString();
+                product.Quantity = (int)TempData["ProductQuantity"];
+                product.PurchasePricePerUnit = (decimal)TempData["PurchasePricePerUnit"];
+                product.NumberOfSales = (int)TempData["NumberOfSales"];
+
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
