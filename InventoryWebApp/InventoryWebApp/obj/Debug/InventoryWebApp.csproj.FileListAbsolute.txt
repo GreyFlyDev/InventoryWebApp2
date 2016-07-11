@@ -64,6 +64,5 @@ C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\bin\Mic
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csprojResolveAssemblyReference.cache
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.dll
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.pdb
