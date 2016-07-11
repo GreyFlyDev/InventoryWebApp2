@@ -81,6 +81,7 @@ namespace InventoryWebApp.Controllers
                 return HttpNotFound();
             }
 
+            TempData["ProductId"] = id;
             TempData["UserId"] = product.UserId;
             TempData["ProductQuantity"] = product.Quantity;
             TempData["PurchasePricePerUnit"] = product.PurchasePricePerUnit;

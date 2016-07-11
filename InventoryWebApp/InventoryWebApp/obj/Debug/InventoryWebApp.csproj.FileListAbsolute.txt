@@ -69,3 +69,4 @@ C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Deb
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.InitialCreate.resources
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csproj.GenerateResource.Cache
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.AddRestockModel.resources
+C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csprojResolveAssemblyReference.cache
