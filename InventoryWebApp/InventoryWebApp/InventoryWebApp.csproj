@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RestocksController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,12 +184,17 @@
     <Compile Include="Migrations\201607111824517_AddRestockModel.Designer.cs">
       <DependentUpon>201607111824517_AddRestockModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607111938481_AddeSaleModel.cs" />
+    <Compile Include="Migrations\201607111938481_AddeSaleModel.Designer.cs">
+      <DependentUpon>201607111938481_AddeSaleModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Restock.cs" />
+    <Compile Include="Models\Sale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -257,6 +263,11 @@
     <Content Include="Views\Restocks\Details.cshtml" />
     <Content Include="Views\Restocks\Edit.cshtml" />
     <Content Include="Views\Restocks\Index.cshtml" />
+    <Content Include="Views\Sales\Create.cshtml" />
+    <Content Include="Views\Sales\Delete.cshtml" />
+    <Content Include="Views\Sales\Details.cshtml" />
+    <Content Include="Views\Sales\Edit.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607111824517_AddRestockModel.resx">
       <DependentUpon>201607111824517_AddRestockModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607111938481_AddeSaleModel.resx">
+      <DependentUpon>201607111938481_AddeSaleModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

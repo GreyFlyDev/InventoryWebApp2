@@ -33,5 +33,7 @@ namespace InventoryWebApp.Models
         public System.Data.Entity.DbSet<InventoryWebApp.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<InventoryWebApp.Models.Restock> Restocks { get; set; }
+
+        public System.Data.Entity.DbSet<InventoryWebApp.Models.Sale> Sales { get; set; }
     }
 }
