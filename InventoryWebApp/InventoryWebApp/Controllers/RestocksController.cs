@@ -39,8 +39,9 @@ namespace InventoryWebApp.Controllers
         }
 
         // GET: Restocks/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            TempData["RestockProductId"] = id;
             return View();
         }
 
@@ -49,12 +50,12 @@ namespace InventoryWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RestockId,QuantityPurchased,PurchasePricePerUnit,UserId,ProductId")] Restock restock)
+        public ActionResult Create([Bind(Include = "RestockId,QuantityPurchased,PurchasePricePerUnit,TotalInvestment,UserId,ProductId")] Restock restock)
         {
             if (ModelState.IsValid)
             {
                 string currentUserId = User.Identity.GetUserId().ToString();
-                int productId = (int)TempData["ProductId"];
+                int productId = (int)TempData["RestockProductId"];
                 restock.UserId = currentUserId;
                 restock.ProductId = productId;
                 
@@ -77,6 +78,7 @@ namespace InventoryWebApp.Controllers
 
                 pricePerUnit = totalInvestment / numberOfUnits;
                 userProduct.PurchasePricePerUnit = pricePerUnit;
+                userProduct.TotalInvestment += totalInvestment;
 
                 db.SaveChanges();
 
