@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using InventoryWebApp.Models;
+using Microsoft.AspNet.Identity;
 
 namespace InventoryWebApp.Controllers
 {
@@ -17,6 +18,8 @@ namespace InventoryWebApp.Controllers
         // GET: Sales
         public ActionResult Index()
         {
+            string currentUserId = User.Identity.GetUserId().ToString();
+            var sales = db.Sales.Where(s => s.UserId == currentUserId);
             return View(db.Sales.ToList());
         }
 
@@ -50,9 +53,25 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                int productId = (int)TempData["ProductId"];
+
+                string currentUserId = User.Identity.GetUserId().ToString();
+
+                Product product = db.Products.Where(p => p.ProductId == productId).FirstOrDefault();
+                sale.ProductId = productId;
+                sale.UserId = currentUserId;
+                sale.ProductPricePerUnit = product.SalePricePerUnit;
+                sale.TotalPrice = 0;
+
                 db.Sales.Add(sale);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                sale.TotalPrice = sale.QuantityPurchased * sale.ProductPricePerUnit;
+                product.Quantity -= sale.QuantityPurchased;
+                product.NumberOfSales++;
+
+                db.SaveChanges();
+                return RedirectToAction("Index", "Products");
             }
 
             return View(sale);
