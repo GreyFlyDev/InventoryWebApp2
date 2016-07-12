@@ -12,6 +12,7 @@ namespace InventoryWebApp.Models
         public int Quantity { get; set; }
         public decimal PurchasePricePerUnit { get; set; }
         public decimal SalePricePerUnit { get; set; }
+        public decimal TotalInvestment { get; set; }
         public int NumberOfSales { get; set; }
 
         public string UserId { get; set; }

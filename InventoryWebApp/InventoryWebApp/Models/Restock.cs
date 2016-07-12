@@ -10,6 +10,7 @@ namespace InventoryWebApp.Models
         public int RestockId { get; set; }
         public int QuantityPurchased { get; set; }
         public decimal PurchasePricePerUnit { get; set; }
+        public decimal TotalInvestment { get; set; }
 
         public string UserId { get; set; }
         public int ProductId { get; set; }

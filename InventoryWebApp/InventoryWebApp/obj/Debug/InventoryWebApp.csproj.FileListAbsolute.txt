@@ -72,3 +72,4 @@ C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Deb
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csprojResolveAssemblyReference.cache
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.AddeSaleModel.resources
 C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.SomethingHappened.resources
+C:\Users\Greg\Documents\InventoryWebApp2\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.AddedTotalInvestmentToProductAndRestockModel.resources

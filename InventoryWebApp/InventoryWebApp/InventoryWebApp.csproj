@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201607120010583_SomethingHappened.Designer.cs">
       <DependentUpon>201607120010583_SomethingHappened.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607121938528_AddedTotalInvestmentToProductAndRestockModel.cs" />
+    <Compile Include="Migrations\201607121938528_AddedTotalInvestmentToProductAndRestockModel.Designer.cs">
+      <DependentUpon>201607121938528_AddedTotalInvestmentToProductAndRestockModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -296,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607120010583_SomethingHappened.resx">
       <DependentUpon>201607120010583_SomethingHappened.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607121938528_AddedTotalInvestmentToProductAndRestockModel.resx">
+      <DependentUpon>201607121938528_AddedTotalInvestmentToProductAndRestockModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
